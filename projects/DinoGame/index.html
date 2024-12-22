@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="dino.js" defer></script>
+    <title>Chrome Dino Game</title>
+</head>
+<body>
+    <h1>Chrome Dino Game</h1>
+    <div class="game-container">
+        <canvas id="board"></canvas>
+        <div class="score-display">Score: <span id="score">0</span></div>
+        <div class="game-over" id="gameOverScreen">
+            <h2>Game Over!</h2>
+            <p>Final Score: <span id="finalScore">0</span></p>
+            <p>High Score: <span id="highScore">0</span></p>
+        </div>
+    </div>
+    <div class="controls">
+        <button class="btn" id="startBtn">Start Game</button>
+        <button class="btn" id="restartBtn">Restart</button>
+    </div>
+    <div class="instructions">
+        <p>Space/↑ to jump | ↓ to duck</p>
+    </div>
+</body>
+</html>

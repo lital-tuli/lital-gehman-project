@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whack a Mole - Mario Edition</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Whack a Mole</h1>
+        
+        <div class="game-controls">
+            <button id="startButton">Start Game</button>
+            <button id="pauseButton" disabled>Pause</button>
+            <div class="game-info">
+                <div class="timer">Time: <span id="timeLeft">30</span>s</div>
+                <div class="current-score">Score: <span id="score">0</span></div>
+            </div>
+            <select id="difficulty">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+        </div>
+
+        <div id="board"></div>
+
+        <div id="leaderboard">
+            <h2>Leaderboard</h2>
+            <div class="leaderboard-tabs">
+                <button class="tab-btn active" data-difficulty="easy">Easy</button>
+                <button class="tab-btn" data-difficulty="medium">Medium</button>
+                <button class="tab-btn" data-difficulty="hard">Hard</button>
+            </div>
+            <div id="leaderboard-scores"></div>
+        </div>
+    </div>
+
+    <div id="gameOverModal" class="modal">
+        <div class="modal-content">
+            <h2>Game Over!</h2>
+            <p>Final Score: <span id="finalScore">0</span></p>
+            <button id="playAgainButton">Play Again</button>
+        </div>
+    </div>
+
+    <div id="pauseModal" class="modal">
+        <div class="modal-content">
+            <h2>Game Paused</h2>
+            <button id="resumeButton">Resume Game</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

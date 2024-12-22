@@ -1,0 +1,224 @@
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #2ecc71;
+    --danger-color: #e74c3c;
+    --text-color: #2c3e50;
+    --background-color: #f5f6fa;
+    --card-background: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Typography */
+h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin: 2rem 0;
+    text-shadow: 2px 2px 4px var(--shadow-color);
+}
+
+/* Card Styling */
+.card {
+    background: var(--card-background);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    padding: 2rem;
+    width: 100%;
+    max-width: 600px;
+    margin: 1rem 0;
+}
+
+/* Form Styling */
+.start-form {
+    background: var(--card-background);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+input, select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+/* Button Styling */
+.btn, .answer-btn, .start-btn {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.btn:hover, .answer-btn:hover, .start-btn:hover {
+    transform: translateY(-2px);
+}
+
+.start-btn {
+    background-color: var(--primary-color);
+    color: white;
+    width: 100%;
+    margin-top: 1rem;
+}
+#restart-btn {
+    display: block;
+    margin: 1rem auto;
+    background-color: var(--primary-color);
+    color: white;
+}
+.answer-btn {
+    background-color: white;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    width: 100%;
+}
+
+.answer-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.answer-btn:disabled {
+    background-color: #e0e0e0;
+    border-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+/* Quiz Container Styling */
+#quiz-container {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    padding: 1rem;
+}
+
+.answers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem auto;
+}
+
+.question-text {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Timer Styling */
+.timer {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.timer-warning {
+    color: var(--danger-color);
+    animation: pulse 1s infinite;
+}
+
+/* Feedback Styling */
+.feedback {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+    max-width: 90%;
+    width: auto;
+}
+
+.correct {
+    background-color: var(--secondary-color);
+}
+
+.incorrect {
+    background-color: var(--danger-color);
+}
+
+/* Loading Spinner */
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 2rem auto;
+}
+
+/* Leaderboard Styling */
+#leaderboard-container {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 2rem;
+    background: var(--card-background);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+#leaderboard li {
+    
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+}

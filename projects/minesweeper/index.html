@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minesweeper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="game-header">
+            <div class="mines-counter">Mines: <span id="mines-count">10</span></div>
+            <button id="flag-button">🚩</button>
+            <button id="restart-button">Restart</button>
+        </div>
+        <div id="board"></div>
+        <div class="game-controls">
+            <label for="difficulty">Difficulty:</label>
+            <select id="difficulty">
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="expert">Expert</option>
+            </select>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Heebo, sans-serif;
+  }
+  
+  
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+  }
+  
+  body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    background-image: url('images/Path\ 15.png');
+    background-repeat: no-repeat;
+    background-position: right top;
+  }
+  
+  .container-form {
+    width: 90vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 20%;
+  }
+  
+  form {
+    background-color: #1A1A1AD4;
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 90px;
+    padding-bottom: 100px;
+  }
+  
+  
+  
+  
+  
+  
+  .form-title {
+    font: normal normal 900 36px/53px Heebo;
+    color: white;
+    text-align: center;
+  }
+  
+  .form-text {
+    font: normal normal normal 20px/29px Heebo;
+    width: 417.5px;
+    text-align: center;
+    text-align: justify;
+    color: white;
+  }
+  
+  .form-control {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-control>label {
+    font: normal normal bold 16px/24px Heebo;
+    color: white;
+  }
+  
+  .form-control>input {
+    width: 90%;
+    width: 417.5px;
+    height: 50px;
+    border-radius: 0px;
+    border: 1px solid #D31C75;
+    font: normal normal normal 20px/29px Heebo;
+  }
+  
+  .form>button {
+    width: 166px;
+    height: 50px;
+    background: #D31C75 0% 0% no-repeat padding-box;
+    border: 0px;
+    font: normal normal bold 22px/30px Heebo;
+    letter-spacing: 0.33px;
+    color: white;
+    margin-top: 15px;
+    transition: font 0.3s ease-in-out;
+  }
+  
+  form>button:hover {
+    font: normal normal bold 28px/37px Heebo;
+  }
+  
+  @media (max-width: 1200px) {
+    .form-title {
+      font: normal normal 900 25px/30px Heebo;
+    }
+  
+    .form-text {
+      font: normal normal normal 15px/22px Heebo;
+    }
+  
+    .form-control>label {
+      font: normal normal bold 10px/14px Heebo;
+    }
+  
+  
+    .form>button {
+      padding: 5px;
+    }
+  
+    .form-control>input {
+      font: normal normal normal 15px/22px Heebo;
+      margin-top: 5px;
+      padding: 10px;
+      height: auto;
+    }
+  
+    body {
+      justify-content: center;
+    }
+  
+  
+  
+  
+  }
+  
+  @media (max-width: 850px) {
+  
+  
+    .container-form {
+      width: 100vw;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .form-title {
+      font: normal normal 900 25px/30px Heebo;
+    }
+  
+    .form-text {
+      font: normal normal normal 15px/22px Heebo;
+      width: 100%;
+    }
+  
+    .form-control>label {
+      font: normal normal bold 10px/14px Heebo;
+    }
+  
+  
+    .form>button {
+      width: fit-content;
+      padding: 10px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  
+    .form-control>input {
+      font: normal normal normal 15px/22px Heebo;
+      margin-top: 5px;
+      padding: 10px;
+      height: auto;
+      width: 100%;
+    }
+  
+    body {
+      background-size: 850px;
+    }
+  
+    .form {
+      padding: 40px;
+      width: 90%;
+      max-width: 400px;
+    }
+  
+  }

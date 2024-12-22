@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe Showdown</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <div class="game-container">
+        <h1>Tic Tac Toe Showdown</h1>
+        
+        <div class="player-setup">
+            <input type="text" id="player1Name" placeholder="Player 1 Name (Circle)">
+            <input type="text" id="player2Name" placeholder="Player 2 Name (Cross)">
+            <button id="startGame">Start Game</button>
+        </div>
+
+        <div class="game-info">
+            <p id="turnInfo"></p>
+            <p id="scoreBoard">
+                <span id="player1Score">0</span> : 
+                <span id="player2Score">0</span>
+            </p>
+        </div>
+
+        <div id="gameBoard" class="disabled"></div>
+
+        <div class="game-controls">
+            <button id="restartGame" disabled>Restart Game</button>
+            <button id="resetScores" disabled>Reset Scores</button>
+            <button id="newPlayers">New Players</button>
+        </div>
+    </div>
+</body>
+</html>

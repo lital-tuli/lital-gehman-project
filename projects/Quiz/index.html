@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Quest</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Trivia Quest</h1>
+        
+        <div id="start-screen">
+            <form id="start-form" class="start-form">
+                <div class="form-group">
+                    <label for="player-name">Enter Your Name:</label>
+                    <input type="text" id="player-name" required placeholder="Your name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="difficulty-selector">Select Difficulty:</label>
+                    <select id="difficulty-selector" required>
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="start-btn">Start Quiz</button>
+            </form>
+        </div>
+
+        <div id="loading-spinner" class="hidden">
+            <div class="spinner"></div>
+            <p>Loading questions...</p>
+        </div>
+
+        <div id="question-counter" class="question-counter"></div>
+        
+        <div id="quiz-container" class="hidden"></div>
+        
+        <div id="result-container" class="hidden">
+            <h2 id="result-message"></h2>
+            <div id="score"></div>
+            <button id="restart-btn" class="btn">Play Again</button>
+        </div>
+        
+        <div id="leaderboard-container">
+            <h2>Top Scores</h2>
+            <ul id="leaderboard"></ul>
+        </div>
+    </div>
+    
+    <script src="quiz.js"></script>
+</body>
+</html>

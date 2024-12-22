@@ -1,0 +1,110 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box
+}
+.container
+{
+    width:100vw;
+    height:100vh;
+    background:linear-gradient(180deg, #281EFF, #2DFF8C);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+    .container h1{
+        text-align:center;
+        font:normal normal normal 160px/231px Satisfy;
+        color:#fff;
+        text-shadow:0px 0px 36px rgba(0,0,0,.5294117647);
+    }
+    .container h2
+    {
+        text-align:center;
+        font:normal normal normal 32px/38px "Varela Round";
+        color:#fff;
+    }
+    .container p
+    {
+        width:65%;margin-top:10px;text-align:center;
+        font:normal normal normal 16px/20px "Varela Round";
+        color:#f9f9f9
+    }
+        .container form{
+            width:60%;margin-top:40px;
+            display:flex;
+            flex-direction: row-reverse;
+            justify-content:space-between;
+            align-items:end;
+            
+
+
+        }
+            .container form .field{
+                width:37%;
+               
+            }
+            .container form .field label
+            {
+                width:100%;
+                font:normal normal normal 16px/20px "Varela Round";
+                color:#f9f9f9;
+                display: flex;
+                flex-direction: row-reverse;
+                
+            }.container form .field input
+            {
+                width:100%;
+                height:50px;
+                margin-top:3px;
+                background:rgba(246,246,246,.1411764706) 0% 0% no-repeat padding-box;
+                border:2px solid #fff;
+            }
+            .container form input[type=submit]
+            {
+                width:18%;height:50px;
+                border:none;
+                color:#1c1c1c;
+                font:normal normal normal 16px/20px "Varela Round";
+            }
+                @media(max-width: 768px)
+                {
+                    .container h1
+                    {
+                        width:85%;
+                        font:normal normal normal 60px/86px Satisfy;
+                    }
+                    .container h2
+                    {
+                        width:85%;
+                        margin-top:30px;
+                        font:normal normal normal 18px/22px "Varela Round";
+                    }
+                        .container p
+                        {
+                            width:85%;
+                            margin-top:20px;
+                            font:normal normal normal 16px/20px "Varela Round";
+                        }
+.container form
+{
+    flex-direction:column;
+    width:80%;
+}
+    .container form .field{
+        width:100%;
+        margin-top:15px;
+    }.container form .field label{
+        font:normal normal normal 11px/13px "Varela Round";
+    }.container form .field input{
+        height:36px;
+    }.container form input[type=submit]{
+        width:100%;
+        height:33px;
+        margin-top:16px;
+        font:normal normal normal 11px/13px "Varela Round";
+        color:#2823fd;
+    }
+}
+        
