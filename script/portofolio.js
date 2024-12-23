@@ -8,15 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const messageInput = form.querySelector('textarea');
     const submitBtn = form.querySelector('.submit-btn a');
 
-    // Add EmailJS SDK
-    const emailJsScript = document.createElement('script');
-    emailJsScript.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js';
-    document.head.appendChild(emailJsScript);
-
-    emailJsScript.onload = function() {
-        // Initialize EmailJS with the service
-        emailjs.init("service_b7sixu6");
-    };
+    // Initialize EmailJS
+    emailjs.init("v4tmqK0jIBd5LE6Qo");
 
     // Add custom styles
     const style = document.createElement('style');
@@ -99,7 +92,6 @@ document.addEventListener('DOMContentLoaded', function() {
             transform: translateY(-100%);
             transition: transform 0.3s ease;
             z-index: 1000;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .submit-feedback.success {
@@ -113,8 +105,27 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         .loading {
-            opacity: 0.7;
+            position: relative;
             pointer-events: none;
+        }
+
+        .loading::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: rotate 1s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: translateY(-50%) rotate(0deg); }
+            100% { transform: translateY(-50%) rotate(360deg); }
         }
     `;
     document.head.appendChild(style);
@@ -247,7 +258,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Form submission with EmailJS
+    // Form submission
     submitBtn.addEventListener('click', async (e) => {
         e.preventDefault();
 
@@ -269,20 +280,23 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!checkLength(nameInput, 2, 50)) return;
         if (!checkLength(messageInput, 10, 500)) return;
 
-        // Show loading state
+        // Add loading state
         submitBtn.classList.add('loading');
-        const originalBtnText = submitBtn.querySelector('.btn-text').textContent;
-        submitBtn.querySelector('.btn-text').textContent = 'Sending...';
+        
+        // Prepare email parameters
+        const templateParams = {
+            from_name: nameInput.value,
+            from_email: emailInput.value,
+            phone_number: phoneInput.value,
+            subject: subjectInput.value,
+            message: messageInput.value
+        };
 
         try {
-            await emailjs.send('service_b7sixu6', 'template_contact', {
-                from_name: nameInput.value,
-                phone_number: phoneInput.value,
-                reply_to: emailInput.value,
-                subject: subjectInput.value,
-                message: messageInput.value
-            });
-
+            // Send email using EmailJS
+            await emailjs.send('service_b7sixu6', 'template_default', templateParams);
+            
+            // Success handling
             showFeedback('Message sent successfully!', 'success');
             form.reset();
             inputs.forEach(input => {
@@ -294,8 +308,34 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Failed to send email:', error);
             showFeedback('Failed to send message. Please try again.', 'error');
         } finally {
+            // Remove loading state
             submitBtn.classList.remove('loading');
-            submitBtn.querySelector('.btn-text').textContent = originalBtnText;
         }
     });
 });
+
+(function () {
+    // Get theme toggle button
+    const themeBtn = document.querySelector(".theme-btn");
+    
+    // Check for saved user preference, if any, on load of the website
+    const darkMode = localStorage.getItem('darkMode');
+    
+    // If the user previously preferred dark mode, apply it
+    if (darkMode === 'enabled') {
+        document.body.classList.add('dark-mode');
+    }
+    
+    // When toggle button is clicked
+    themeBtn.addEventListener("click", () => {
+        // Toggle dark mode class
+        document.body.classList.toggle("dark-mode");
+        
+        // Save user preference
+        if (document.body.classList.contains('dark-mode')) {
+            localStorage.setItem('darkMode', 'enabled');
+        } else {
+            localStorage.setItem('darkMode', null);
+        }
+    });
+})();
